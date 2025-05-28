@@ -1,7 +1,10 @@
 gst-launch-1.0 -v rtspsrc location=rtsp://127.0.0.1:8554/rgb drop-on-latency=true use-pipeline-clock=true do-retransmission=false latency=0 protocols=GST_RTSP_LOWER_TRANS_UDP ! rtph264depay ! h264parse ! nvh264dec ! autovideosink sync=true
+gst-launch-1.0 -v rtspsrc location=rtsp://127.0.0.1:8555/ir drop-on-latency=true use-pipeline-clock=true do-retransmission=false latency=0 protocols=GST_RTSP_LOWER_TRANS_UDP ! rtph264depay ! h264parse ! nvh264dec ! autovideosink sync=true
 
 ros2 launch image2rtsp image2rtsp.launch.py 
 
 rtsp://127.0.0.1:8554/rgb
 
 v4l2-ctl -d /dev/video0 --list-formats-ext
+
+nvv4l2decoder for jetson

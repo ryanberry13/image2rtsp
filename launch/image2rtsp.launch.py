@@ -17,18 +17,18 @@ def generate_launch_description():
       )
 
    return LaunchDescription([
+      # Node(
+      #    package='image2rtsp',
+      #    executable='image2rtsp',
+      #    namespace='rgb_camera',
+      #    name='image2rtsp',
+      #    parameters=[rgb_config],
+      #    output='screen',
+      # ),
       Node(
          package='image2rtsp',
          executable='image2rtsp',
-         namespace='rgb_camera',
-         name='image2rtsp',
-         parameters=[rgb_config],
-         output='screen',
-      ),
-      Node(
-         package='image2rtsp',
-         executable='image2rtsp',
-         namespace='ir_camera',
+         # namespace='ir_camera',
          name='image2rtsp',
          parameters=[ir_config],
          output='screen',
